@@ -1,0 +1,256 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #44076d;
+  /* sits below navbar which is 9999 */
+  z-index: 100;
+  transition: height 1.5s cubic-bezier(0.86, 0, 0.07, 1);
+  overflow: hidden;
+}
+
+.overlay.active {
+  height: 100vh;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.5s ease 1.2s;
+}
+
+.overlay.active .content {
+  opacity: 1;
+}
+
+.logosRow {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-sizing: border-box;
+  z-index: 102;
+}
+
+.leftLogo {
+  width: 320px;
+  height: auto;
+  object-fit: cover;
+}
+
+.rightLogo {
+  width: 120px;
+  height: auto;
+  object-fit: cover;
+}
+
+.heroPhoto {
+  position: absolute;
+  left: -120px;
+  top: 120px;
+  width: 1300px;
+  max-width: 80vw;
+  height: auto;
+  border-radius: 16px;
+  opacity: 0;
+  transition: left 1.2s cubic-bezier(0.77, 0, 0.175, 1) 0.3s, opacity 0.7s ease 0.3s;
+  z-index: 105;
+}
+
+.heroPhotoActive {
+  left: 40%;
+  transform: translateX(-60%);
+  opacity: 1;
+}
+
+.titleBlock {
+  position: absolute;
+  top: 320%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 99;
+  width: 1000px;
+  max-width: 98vw;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.titleBlock span {
+  display: block;
+  font-family: 'Arial Black', Arial, sans-serif;
+  color: #edc8ff;
+  opacity: 0;
+  transform: translateX(100vw);
+  transition: opacity 0.7s cubic-bezier(0.77, 0, 0.175, 1) 0.7s,
+    transform 1.2s cubic-bezier(0.77, 0, 0.175, 1) 0.7s;
+  text-shadow:
+    -1.5px -1.5px 0 #fff, 1.5px -1.5px 0 #fff,
+    -1.5px 1.5px 0 #fff, 1.5px 1.5px 0 #fff,
+    0px 1.5px 0 #fff, 1.5px 0px 0 #fff,
+    0px -1.5px 0 #fff, -1.5px 0px 0 #fff,
+    0 4px 24px rgba(0, 0, 0, 0.18);
+  line-height: 1.1;
+}
+
+.titleBlockActive span {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.line1 { font-size: 4.2rem; font-weight: 900; }
+.line2 { font-size: 2.8rem; font-weight: 800; margin-top: 0.2em; }
+.line3 { font-size: 4.2rem; font-weight: 800; margin-top: 0.2em; letter-spacing: 0.12em; }
+
+.highlights {
+  position: absolute;
+  right: 200px;
+  top: 580px;
+  width: 900px;
+  height: 600px;
+  z-index: 98;
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.8s ease 1.5s, transform 0.8s ease 1.5s;
+}
+
+.overlay.active .highlights {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.highlightsInner {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(237, 200, 255, 0.3), rgba(212, 179, 255, 0.4));
+  border-radius: 20px;
+  display: flex;
+  padding: 30px;
+  box-sizing: border-box;
+  gap: 40px;
+  box-shadow:
+    0 8px 32px rgba(237, 200, 255, 0.4),
+    0 0 60px rgba(212, 179, 255, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(237, 200, 255, 0.2);
+}
+
+.highlightCol {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+}
+
+.highlightCol::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px;
+  height: 520px;
+  background: #44076d;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.highlightBox {
+  width: 160px;
+  height: 160px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin-top: 50px;
+  z-index: 2;
+  position: relative;
+}
+
+.highlightText {
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.4;
+  margin-top: 20px;
+  z-index: 2;
+  position: relative;
+}
+
+.arrowContainer {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 106;
+  cursor: pointer;
+  animation: bounceArrow 2s infinite;
+}
+
+.vArrow {
+  position: relative;
+  width: 80px;
+  height: 40px;
+}
+
+.vArrow::before,
+.vArrow::after {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 12px;
+  background: linear-gradient(45deg, #ffffff, #e0caff);
+  border-radius: 6px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  top: 0;
+}
+
+.vArrow::before {
+  transform-origin: left center;
+  transform: rotate(35deg);
+  left: 0;
+}
+
+.vArrow::after {
+  transform-origin: right center;
+  transform: rotate(-35deg);
+  right: 0;
+}
+
+@keyframes bounceArrow {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+@media (max-width: 1200px) {
+  .highlights { right: 50px; width: 400px; height: 350px; }
+  .highlightCol::before { width: 160px; height: 280px; }
+  .highlightBox { width: 100px; height: 100px; margin-top: 30px; }
+}
+
+@media (max-width: 900px) {
+  .highlights { display: none; }
+}
+
+@media (max-width: 700px) {
+  .titleBlock { width: 98vw; left: 57%; }
+  .line1 { font-size: 2.8rem; }
+  .line2 { font-size: 1.8rem; }
+  .line3 { font-size: 2.2rem; }
+  .vArrow::before, .vArrow::after { width: 60px; }
+}

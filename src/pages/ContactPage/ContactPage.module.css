@@ -1,0 +1,107 @@
+.page {
+  min-height: 100vh;
+  padding-top: 60px;
+  background-color: #6a0dad;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: Arial, sans-serif;
+}
+.card {
+  max-width: 800px;
+  width: 95%;
+  margin: 40px auto;
+  padding: 40px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  color: #333;
+}
+
+.title {
+  font-size: 2.2em;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+.formGroup {
+  margin-bottom: 30px;
+}
+
+.formGroup label {
+  display: block;
+  font-size: 1.1em;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.formGroup input[type='text'],
+.formGroup input[type='email'],
+.formGroup textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1em;
+  font-family: inherit;
+  background: #fafafa;
+  box-sizing: border-box;
+  transition: border-color 0.3s, background 0.3s, transform 0.2s;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: #6a0dad;
+  background: white;
+  transform: scale(1.02);
+}
+
+.formGroup textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.sendBtn {
+  width: 100%;
+  padding: 18px;
+  background: white;
+  border: 2px solid #333;
+  border-radius: 50px;
+  font-size: 1.1em;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #333;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+.sendBtn:hover:not(:disabled) {
+  background: #6a0dad;
+  border-color: #6a0dad;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(106, 13, 173, 0.3);
+}
+
+.sendBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.successMsg {
+  background: #d4edda;
+  color: #155724;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.errorMsg {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
