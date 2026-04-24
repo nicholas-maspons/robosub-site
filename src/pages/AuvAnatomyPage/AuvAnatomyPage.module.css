@@ -40,7 +40,7 @@
   background: #f8f8f8;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+
   position: relative;
 }
 
@@ -144,7 +144,7 @@
   font-weight: normal;
   opacity: 0.9;
 }
-/* for AR buttn */
+/* AR button slot — appears inside model-viewer on Quest and mobile */
 .arButton {
   background: #6a0dad;
   color: white;
@@ -157,6 +157,7 @@
   position: absolute;
   bottom: 16px;
   right: 16px;
+  z-index: 200;
   transition: background 0.2s;
 }
 

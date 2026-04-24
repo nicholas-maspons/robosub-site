@@ -77,6 +77,11 @@ function AuvAnatomyPage() {
     document.head.appendChild(script);
   }, []);
 
+  const launchAR = () => {
+    const mv = document.querySelector('model-viewer') as any;
+    if (mv && mv.activateAR) mv.activateAR();
+  };
+
   return (
     <div className={styles.page}>
       <div className={styles.card}>
@@ -112,13 +117,13 @@ function AuvAnatomyPage() {
                 {i + 1}
               </button>
             ))}
-
-            {/* AR button not working rn please hold */}
-            <button slot="ar-button" className={styles.arButton}>
-              🥽 View in AR
-            </button>
           {/* @ts-ignore */}
           </model-viewer>
+
+          {/* AR button sits on top of model-viewer via absolute positioning — not inside it */}
+          <button className={styles.arButton} onClick={launchAR}>
+            🥽 View in AR
+          </button>
 
           {activeCard && (
             <div className={styles.infoCard}>
